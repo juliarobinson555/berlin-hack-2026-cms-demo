@@ -1192,48 +1192,34 @@ body {
 
 .win-card {
   padding: 24px;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  text-align: left;
-  min-height: 140px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  min-height: 110px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  justify-content: center;
+  align-items: center;
 }
 
 .win-card:nth-child(1),
 .win-card:nth-child(4) {
-  background: rgba(5, 178, 252, 0.12);
-  border-color: rgba(5, 178, 252, 0.3);
-}
-
-.win-icon {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
   background: rgba(5, 178, 252, 0.15);
-  color: var(--blue);
-}
-
-.win-icon svg {
-  width: 22px;
-  height: 22px;
+  border-color: rgba(5, 178, 252, 0.35);
 }
 
 .win-card strong {
-  color: #ffffff;
-  font-size: clamp(17px, 1.7vw, 21px);
+  color: var(--blue);
+  font-size: clamp(18px, 1.8vw, 22px);
   font-weight: 800;
   letter-spacing: -0.04em;
 }
 
 .win-card p {
-  margin: 0;
+  margin: 6px 0 0;
   color: var(--blue);
-  opacity: 0.8;
+  opacity: 0.75;
   font-size: clamp(13px, 1.2vw, 16px);
   font-weight: 400;
   line-height: 1.2;
