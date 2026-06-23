@@ -26,7 +26,7 @@ function animateCurrentSlide() {
 
   const slide = deck.getCurrentSlide();
   const targets = slide.querySelectorAll(
-    'h1, h2, .kicker, .lead, .team-strip span, .p-step, .idea-card, .approach-card, .sol-step, .compare-col, .feat-card, .dt-step, .tech-badge, .stat, .impact-card, .value-row, .rm-phase, .win-item, .cta-box, .closing-layout p, .demo-cta'
+    'h1, h2, .kicker, .tagline, .built-by, .pain-node, .goal-sub, .idea-card, .approach-card, .flow-step, .cat-card, .transform-side, .d-step, .platform-badge, .demo-switch, .tech-tag, .tech-stat, .impact-card, .value-card, .rm-phase, .win-card, .closing-tagline, .closing-footer'
   );
 
   animate(targets, {
