@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Launchpad — Demo</title>
+    <meta name="description" content="DW CMS Superpowers: Hackathon demo presentation." />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section class="title-slide" data-background-color="#05B2FC">
+          <div class="section-layout">
+            <p class="kicker">Berlin Hackathon 2026 — Demo</p>
+            <h1>Content Launchpad</h1>
+            <p class="lead">A sidecar AI assistant that turns every DW story into platform-ready social posts — without touching the CMS.</p>
+          </div>
+          <aside class="notes">Title slide. Open with the core promise.</aside>
+        </section>
+
+        <section>
+          <div class="section-layout">
+            <p class="kicker">The challenge</p>
+            <h2>One story, too many manual steps to distribute it.</h2>
+            <p class="body-copy">30+ languages. Multiple platforms per language. Rewriting, adapting links, hashtags, assets — all by hand, every time.</p>
+          </div>
+          <aside class="notes">Set the problem context. DW scale makes this painful.</aside>
+        </section>
+
+        <section>
+          <div class="section-layout">
+            <p class="kicker">Our approach</p>
+            <h2>Inject AI superpowers next to the CMS.</h2>
+            <div class="feature-grid">
+              <div class="feature-card highlight"><strong>Sidecar panel</strong><span>No CMS code changes</span></div>
+              <div class="feature-card"><strong>Bookmarklet</strong><span>One click to activate</span></div>
+              <div class="feature-card accent"><strong>Shadow DOM</strong><span>CSS isolation</span></div>
+              <div class="feature-card"><strong>Plugin system</strong><span>Extensible commands</span></div>
+              <div class="feature-card"><strong>LLM Hub</strong><span>AI generation</span></div>
+              <div class="feature-card highlight"><strong>Field anchors</strong><span>Inline AI icons</span></div>
+            </div>
+          </div>
+          <aside class="notes">Six pillars of the approach.</aside>
+        </section>
+
+        <section>
+          <div class="section-layout">
+            <p class="kicker">Architecture</p>
+            <h2>Layered for zero CMS coupling.</h2>
+            <div class="arch-stack">
+              <div class="arch-layer host"><strong>Host shell</strong><span>Panel, event bus, LLM client, plugin runtime</span></div>
+              <div class="arch-layer adapter"><strong>CMS Adapter</strong><span>Routes, field extractors, DOM observer, URL watcher</span></div>
+              <div class="arch-layer"><strong>Plugins</strong><span>Title suggester (shipped) · Social drafter (spec'd) · SEO bundle (spec'd)</span></div>
+              <div class="arch-layer"><strong>Shared SDK</strong><span>Typed contract, mock host for parallel dev</span></div>
+            </div>
+          </div>
+          <aside class="notes">Walk through the layers — emphasize adapter isolation.</aside>
+        </section>
+
+        <section>
+          <div class="section-layout">
+            <p class="kicker">Live demo flow</p>
+            <h2>From article to AI suggestions in seconds.</h2>
+            <div class="demo-flow">
+              <div class="demo-step"><span class="step-num">01</span><strong>Open CMS article</strong><p>Navigate to any article page</p></div>
+              <div class="demo-step"><span class="step-num">02</span><strong>Click bookmarklet</strong><p>Panel injects via Shadow DOM</p></div>
+              <div class="demo-step"><span class="step-num">03</span><strong>Run command</strong><p>Title suggester generates 5 headlines</p></div>
+              <div class="demo-step"><span class="step-num">04</span><strong>Write back</strong><p>One click applies to CMS field</p></div>
+            </div>
+          </div>
+          <aside class="notes">This is the live demo sequence. Switch to the CMS after this slide.</aside>
+        </section>
+
+        <section>
+          <div class="section-layout">
+            <p class="kicker">What we built</p>
+            <h2>Hackathon deliverables.</h2>
+            <div class="feature-grid">
+              <div class="feature-card highlight"><strong>Host shell</strong><span>Rail + panel + settings</span></div>
+              <div class="feature-card accent"><strong>LLM client</strong><span>Structured output + Zod</span></div>
+              <div class="feature-card"><strong>CMS adapter</strong><span>Field read/write, routing</span></div>
+              <div class="feature-card"><strong>Anchor manager</strong><span>Inline field icons</span></div>
+              <div class="feature-card highlight"><strong>Title suggester</strong><span>First working plugin</span></div>
+              <div class="feature-card"><strong>Readonly detection</strong><span>Graceful degradation</span></div>
+            </div>
+          </div>
+          <aside class="notes">Concrete outputs from the hackathon day.</aside>
+        </section>
+
+        <section>
+          <div class="section-layout">
+            <p class="kicker">Tech stack</p>
+            <h2>Lightweight. Fast. Minimal footprint.</h2>
+            <div class="tech-grid">
+              <div class="tech-pill">SolidJS</div>
+              <div class="tech-pill">TypeScript</div>
+              <div class="tech-pill">Vite</div>
+              <div class="tech-pill">Zod</div>
+              <div class="tech-pill">Shadow DOM</div>
+              <div class="tech-pill">LLM Hub API</div>
+              <div class="tech-pill">MutationObserver</div>
+              <div class="tech-pill">Bookmarklet</div>
+            </div>
+            <p class="body-copy">~7 KB UI framework. No React. No CMS build dependency.</p>
+          </div>
+          <aside class="notes">Emphasize small bundle, zero coupling.</aside>
+        </section>
+
+        <section>
+          <div class="section-layout">
+            <p class="kicker">Outcomes</p>
+            <h2>What this enables.</h2>
+            <div class="outcome-grid">
+              <div class="outcome-item"><strong>Faster distribution</strong><p>AI drafts ready before the editor switches context</p></div>
+              <div class="outcome-item"><strong>Platform fit</strong><p>Each channel gets native wording, hashtags, assets</p></div>
+              <div class="outcome-item"><strong>Human control</strong><p>Editor reviews and approves every suggestion</p></div>
+              <div class="outcome-item"><strong>Extensible</strong><p>Plugin marketplace for SEO, translation, summaries</p></div>
+            </div>
+          </div>
+          <aside class="notes">Benefits for editorial teams.</aside>
+        </section>
+
+        <section>
+          <div class="section-layout">
+            <p class="kicker">Next steps</p>
+            <h2>From prototype to production.</h2>
+            <div class="feature-grid">
+              <div class="feature-card accent"><strong>Social drafter</strong><span>Multi-platform post generation</span></div>
+              <div class="feature-card"><strong>Real publishing</strong><span>Bluesky & Telegram adapters</span></div>
+              <div class="feature-card highlight"><strong>SEO bundle</strong><span>Metadata optimization</span></div>
+            </div>
+            <p class="body-copy">The sidecar pattern scales to any editorial AI use case — without waiting for CMS release cycles.</p>
+          </div>
+          <aside class="notes">Roadmap beyond hackathon.</aside>
+        </section>
+
+        <section class="closing-slide" data-background-color="#F4F2F2">
+          <div class="closing-layout">
+            <h2>More reach. Less manual work. Always under editorial control.</h2>
+            <p>Content Launchpad: CMS superpowers that ship today, as a bookmarklet.</p>
+          </div>
+          <aside class="notes">End on the key message.</aside>
+        </section>
+
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
