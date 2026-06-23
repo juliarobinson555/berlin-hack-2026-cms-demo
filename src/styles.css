@@ -50,6 +50,10 @@ body {
   background: var(--paper);
 }
 
+.reveal .slides section[data-background-color] {
+  background: transparent;
+}
+
 .reveal h1,
 .reveal h2 {
   margin: 0;
