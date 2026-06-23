@@ -4,143 +4,434 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Launchpad — Demo</title>
-    <meta name="description" content="DW CMS Superpowers: Hackathon demo presentation." />
+    <meta name="description" content="DW CMS Superpowers: Berlin Hackathon 2026 Demo." />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
 
+        <!-- 1. TITLE -->
         <section class="title-slide" data-background-color="#05B2FC">
-          <div class="section-layout">
-            <p class="kicker">Berlin Hackathon 2026 — Demo</p>
-            <h1>Content Launchpad</h1>
-            <p class="lead">A sidecar AI assistant that turns every DW story into platform-ready social posts — without touching the CMS.</p>
-          </div>
-          <aside class="notes">Title slide. Open with the core promise.</aside>
-        </section>
-
-        <section>
-          <div class="section-layout">
-            <p class="kicker">The challenge</p>
-            <h2>One story, too many manual steps to distribute it.</h2>
-            <p class="body-copy">30+ languages. Multiple platforms per language. Rewriting, adapting links, hashtags, assets — all by hand, every time.</p>
-          </div>
-          <aside class="notes">Set the problem context. DW scale makes this painful.</aside>
-        </section>
-
-        <section>
-          <div class="section-layout">
-            <p class="kicker">Our approach</p>
-            <h2>Inject AI superpowers next to the CMS.</h2>
-            <div class="feature-grid">
-              <div class="feature-card highlight"><strong>Sidecar panel</strong><span>No CMS code changes</span></div>
-              <div class="feature-card"><strong>Bookmarklet</strong><span>One click to activate</span></div>
-              <div class="feature-card accent"><strong>Shadow DOM</strong><span>CSS isolation</span></div>
-              <div class="feature-card"><strong>Plugin system</strong><span>Extensible commands</span></div>
-              <div class="feature-card"><strong>LLM Hub</strong><span>AI generation</span></div>
-              <div class="feature-card highlight"><strong>Field anchors</strong><span>Inline AI icons</span></div>
+          <div class="title-layout">
+            <div class="title-copy">
+              <p class="kicker">Berlin Hackathon 2026</p>
+              <h1>Content Launchpad</h1>
+              <p class="lead">Vom fertigen Artikel zum plattformfertigen Social Post — in Sekunden.</p>
+            </div>
+            <div class="team-strip">
+              <span>Bartek Pietrowski</span>
+              <span>Tomasz Szewców</span>
+              <span>Farah Baghat</span>
+              <span>Felix Korff</span>
+              <span>Julia Robinson</span>
+              <span>Yuliya Wiedenhöfer</span>
+              <span>Gianna Grün</span>
+              <span>Hadi Albalkhi</span>
             </div>
           </div>
-          <aside class="notes">Six pillars of the approach.</aside>
+          <aside class="notes">Open strong: name the product, show the team, deliver the one-line promise.</aside>
         </section>
 
+        <!-- 2. THE PROBLEM -->
         <section>
           <div class="section-layout">
-            <p class="kicker">Architecture</p>
-            <h2>Layered for zero CMS coupling.</h2>
-            <div class="arch-stack">
-              <div class="arch-layer host"><strong>Host shell</strong><span>Panel, event bus, LLM client, plugin runtime</span></div>
-              <div class="arch-layer adapter"><strong>CMS Adapter</strong><span>Routes, field extractors, DOM observer, URL watcher</span></div>
-              <div class="arch-layer"><strong>Plugins</strong><span>Title suggester (shipped) · Social drafter (spec'd) · SEO bundle (spec'd)</span></div>
-              <div class="arch-layer"><strong>Shared SDK</strong><span>Typed contract, mock host for parallel dev</span></div>
+            <p class="kicker">Das Problem</p>
+            <h2>Der Artikel ist fertig. Die Arbeit beginnt von vorn.</h2>
+            <div class="problem-steps">
+              <div class="p-step">
+                <span class="step-icon">1</span>
+                <div><strong>Umschreiben</strong><p>Jede Plattform braucht einen anderen Ton, andere Länge, andere Ansprache.</p></div>
+              </div>
+              <div class="p-step">
+                <span class="step-icon">2</span>
+                <div><strong>Anpassen</strong><p>Links, Hashtags, Mentions, Assets — alles manuell pro Kanal.</p></div>
+              </div>
+              <div class="p-step">
+                <span class="step-icon">3</span>
+                <div><strong>Multiplizieren</strong><p>30+ Sprachen, unterschiedliche Kanäle pro Sprache, verschiedene Redaktionen.</p></div>
+              </div>
+              <div class="p-step">
+                <span class="step-icon">4</span>
+                <div><strong>Warten</strong><p>Reichweite sinkt, während der manuelle Prozess noch läuft.</p></div>
+              </div>
             </div>
           </div>
-          <aside class="notes">Walk through the layers — emphasize adapter isolation.</aside>
+          <aside class="notes">Make the audience feel the pain. This is daily reality for every language team.</aside>
         </section>
 
+        <!-- 3. THE GOAL -->
+        <section data-background-color="#081336">
+          <div class="section-layout">
+            <p class="kicker light">Das Ziel</p>
+            <h2 class="light">Was wäre, wenn der fertige CMS-Inhalt direkt der Startpunkt für Distribution wäre?</h2>
+            <p class="lead light">Ein Tool im CMS erstellt plattformfertige Vorschläge. Die Redaktion prüft, passt an, gibt frei — und erreicht mehr Menschen, schneller.</p>
+          </div>
+          <aside class="notes">The turning point. Flip the audience's mental model.</aside>
+        </section>
+
+        <!-- 4. THE IDEA -->
         <section>
           <div class="section-layout">
-            <p class="kicker">Live demo flow</p>
-            <h2>From article to AI suggestions in seconds.</h2>
-            <div class="demo-flow">
-              <div class="demo-step"><span class="step-num">01</span><strong>Open CMS article</strong><p>Navigate to any article page</p></div>
-              <div class="demo-step"><span class="step-num">02</span><strong>Click bookmarklet</strong><p>Panel injects via Shadow DOM</p></div>
-              <div class="demo-step"><span class="step-num">03</span><strong>Run command</strong><p>Title suggester generates 5 headlines</p></div>
-              <div class="demo-step"><span class="step-num">04</span><strong>Write back</strong><p>One click applies to CMS field</p></div>
+            <p class="kicker">Die Idee</p>
+            <h2>Content Launchpad: Ein Werkzeugkasten neben dem CMS.</h2>
+            <div class="idea-grid">
+              <div class="idea-card main">
+                <strong>Erster Use Case</strong>
+                <p>Social Publishing — KI-gestützte Entwürfe für jede Plattform, direkt aus dem Artikel.</p>
+              </div>
+              <div class="idea-card">
+                <strong>Langfristige Vision</strong>
+                <p>Derselbe Ansatz ermöglicht weitere CMS Superpowers: SEO, Zusammenfassungen, Übersetzungen.</p>
+              </div>
+              <div class="idea-card accent">
+                <strong>Kein CMS-Umbau nötig</strong>
+                <p>Sidecar-Pattern — funktioniert sofort, unabhängig von Release-Zyklen.</p>
+              </div>
             </div>
           </div>
-          <aside class="notes">This is the live demo sequence. Switch to the CMS after this slide.</aside>
+          <aside class="notes">Position the product. Social publishing is the first superpower, not the last.</aside>
         </section>
 
+        <!-- 5. OUR APPROACH -->
         <section>
           <div class="section-layout">
-            <p class="kicker">What we built</p>
-            <h2>Hackathon deliverables.</h2>
-            <div class="feature-grid">
-              <div class="feature-card highlight"><strong>Host shell</strong><span>Rail + panel + settings</span></div>
-              <div class="feature-card accent"><strong>LLM client</strong><span>Structured output + Zod</span></div>
-              <div class="feature-card"><strong>CMS adapter</strong><span>Field read/write, routing</span></div>
-              <div class="feature-card"><strong>Anchor manager</strong><span>Inline field icons</span></div>
-              <div class="feature-card highlight"><strong>Title suggester</strong><span>First working plugin</span></div>
-              <div class="feature-card"><strong>Readonly detection</strong><span>Graceful degradation</span></div>
+            <p class="kicker">Unser Ansatz</p>
+            <h2>Ein Tag. Ein diverses Team. Maximale Effizienz.</h2>
+            <div class="approach-grid">
+              <div class="approach-card">
+                <span class="a-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </span>
+                <strong>Begrenzte Zeit</strong>
+                <p>Klare Priorisierung: Was bringt den meisten Wert in einem Tag?</p>
+              </div>
+              <div class="approach-card">
+                <span class="a-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <strong>Unterschiedliche Skills</strong>
+                <p>Konzept, Prompting, UI, Backend, Testing — jede Rolle zählt.</p>
+              </div>
+              <div class="approach-card">
+                <span class="a-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </span>
+                <strong>Remote & Vor-Ort</strong>
+                <p>Tooling und Workflows für verteiltes Arbeiten von Anfang an.</p>
+              </div>
+              <div class="approach-card">
+                <span class="a-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </span>
+                <strong>Schnelle Iteration</strong>
+                <p>Gemeinsame Umgebung, geteilte Zugänge, AI-gestützte Entwicklung.</p>
+              </div>
             </div>
           </div>
-          <aside class="notes">Concrete outputs from the hackathon day.</aside>
+          <aside class="notes">Show the human side. This is about collaboration under pressure.</aside>
         </section>
 
+        <!-- 6. SOLUTION OVERVIEW -->
         <section>
           <div class="section-layout">
-            <p class="kicker">Tech stack</p>
-            <h2>Lightweight. Fast. Minimal footprint.</h2>
-            <div class="tech-grid">
-              <div class="tech-pill">SolidJS</div>
-              <div class="tech-pill">TypeScript</div>
-              <div class="tech-pill">Vite</div>
-              <div class="tech-pill">Zod</div>
-              <div class="tech-pill">Shadow DOM</div>
-              <div class="tech-pill">LLM Hub API</div>
-              <div class="tech-pill">MutationObserver</div>
-              <div class="tech-pill">Bookmarklet</div>
+            <p class="kicker">Die Lösung</p>
+            <h2>So funktioniert Content Launchpad.</h2>
+            <div class="solution-flow">
+              <div class="sol-step">
+                <span class="sol-num">1</span>
+                <strong>Bookmarklet klicken</strong>
+                <p>Ein Klick aktiviert das Panel neben dem CMS.</p>
+              </div>
+              <div class="sol-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+              <div class="sol-step">
+                <span class="sol-num">2</span>
+                <strong>Artikel wird analysiert</strong>
+                <p>KI liest Titel, Text, Kontext aus dem CMS-Feld.</p>
+              </div>
+              <div class="sol-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+              <div class="sol-step">
+                <span class="sol-num">3</span>
+                <strong>Vorschläge generieren</strong>
+                <p>Plattformspezifische Entwürfe, Titel, SEO — per Knopfdruck.</p>
+              </div>
+              <div class="sol-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+              <div class="sol-step">
+                <span class="sol-num">4</span>
+                <strong>Prüfen & freigeben</strong>
+                <p>Redaktion behält volle Kontrolle über jeden Vorschlag.</p>
+              </div>
             </div>
-            <p class="body-copy">~7 KB UI framework. No React. No CMS build dependency.</p>
           </div>
-          <aside class="notes">Emphasize small bundle, zero coupling.</aside>
+          <aside class="notes">Four-step flow. Simple enough for non-technical audience.</aside>
         </section>
 
+        <!-- 7. BEFORE vs AFTER -->
         <section>
           <div class="section-layout">
-            <p class="kicker">Outcomes</p>
-            <h2>What this enables.</h2>
-            <div class="outcome-grid">
-              <div class="outcome-item"><strong>Faster distribution</strong><p>AI drafts ready before the editor switches context</p></div>
-              <div class="outcome-item"><strong>Platform fit</strong><p>Each channel gets native wording, hashtags, assets</p></div>
-              <div class="outcome-item"><strong>Human control</strong><p>Editor reviews and approves every suggestion</p></div>
-              <div class="outcome-item"><strong>Extensible</strong><p>Plugin marketplace for SEO, translation, summaries</p></div>
+            <p class="kicker">Vorher vs. Nachher</p>
+            <h2>Der Unterschied auf einen Blick.</h2>
+            <div class="compare-grid">
+              <div class="compare-col before">
+                <div class="compare-header">Heute</div>
+                <div class="compare-item negative"><span>30+ Min</span> pro Plattform-Post manuell formulieren</div>
+                <div class="compare-item negative"><span>Copy & Paste</span> zwischen CMS, Docs, Social Tools</div>
+                <div class="compare-item negative"><span>Inkonsistenz</span> bei Links, Hashtags, Tonalität</div>
+                <div class="compare-item negative"><span>Zeitverlust</span> Reichweite sinkt während Aufbereitung</div>
+              </div>
+              <div class="compare-col after">
+                <div class="compare-header">Mit Content Launchpad</div>
+                <div class="compare-item positive"><span>Sekunden</span> KI-Entwurf pro Plattform</div>
+                <div class="compare-item positive"><span>Ein Ort</span> Alles im CMS, kein Tool-Wechsel</div>
+                <div class="compare-item positive"><span>Konsistenz</span> Original-Link, Branding, Tonalität automatisch</div>
+                <div class="compare-item positive"><span>Sofort</span> Distribution startet mit Artikelfreigabe</div>
+              </div>
             </div>
           </div>
-          <aside class="notes">Benefits for editorial teams.</aside>
+          <aside class="notes">This is the money slide. Make it visual, make it emotional.</aside>
         </section>
 
+        <!-- 8. KEY FEATURES -->
         <section>
           <div class="section-layout">
-            <p class="kicker">Next steps</p>
-            <h2>From prototype to production.</h2>
-            <div class="feature-grid">
-              <div class="feature-card accent"><strong>Social drafter</strong><span>Multi-platform post generation</span></div>
-              <div class="feature-card"><strong>Real publishing</strong><span>Bluesky & Telegram adapters</span></div>
-              <div class="feature-card highlight"><strong>SEO bundle</strong><span>Metadata optimization</span></div>
+            <p class="kicker">Was wir gebaut haben</p>
+            <h2>Funktionen, die heute funktionieren.</h2>
+            <div class="feature-showcase">
+              <div class="feat-card large">
+                <div class="feat-label">Social Drafter</div>
+                <strong>KI-Entwürfe für jede Plattform</strong>
+                <p>Bluesky, X, Telegram, Instagram, Facebook — jeweils im nativen Ton der Plattform.</p>
+              </div>
+              <div class="feat-card">
+                <div class="feat-label">Title Suggester</div>
+                <strong>5 Headline-Varianten</strong>
+                <p>Neutral, punchy, SEO, human-interest, analytisch.</p>
+              </div>
+              <div class="feat-card accent">
+                <div class="feat-label">SEO Bundle</div>
+                <strong>Koordinierte Metadaten</strong>
+                <p>SEO-Titel, OG-Titel, Short-Teaser — aufeinander abgestimmt.</p>
+              </div>
+              <div class="feat-card">
+                <div class="feat-label">Write-Back</div>
+                <strong>Ein Klick ins CMS</strong>
+                <p>Vorschlag akzeptieren, Feld wird befüllt, speichern funktioniert.</p>
+              </div>
+              <div class="feat-card dark">
+                <div class="feat-label">Plugin-System</div>
+                <strong>Erweiterbar für jeden Use Case</strong>
+                <p>Ein Ordner, ein Prompt, ein Schema — neue Superpowers in Minuten.</p>
+              </div>
             </div>
-            <p class="body-copy">The sidecar pattern scales to any editorial AI use case — without waiting for CMS release cycles.</p>
           </div>
-          <aside class="notes">Roadmap beyond hackathon.</aside>
+          <aside class="notes">Concrete features. Each one solves a real problem.</aside>
         </section>
 
+        <!-- 9. LIVE DEMO -->
+        <section data-background-color="#081336">
+          <div class="section-layout">
+            <p class="kicker light">Live Demo</p>
+            <h2 class="light">Vom Artikel zum Social Post in unter 60 Sekunden.</h2>
+            <div class="demo-timeline">
+              <div class="dt-step">
+                <span class="dt-time">0:00</span>
+                <strong>CMS öffnen</strong>
+                <p>Artikel-Seite im Browser</p>
+              </div>
+              <div class="dt-step">
+                <span class="dt-time">0:10</span>
+                <strong>Bookmarklet</strong>
+                <p>Panel erscheint am rechten Rand</p>
+              </div>
+              <div class="dt-step">
+                <span class="dt-time">0:20</span>
+                <strong>Social Drafts</strong>
+                <p>KI generiert plattformspezifische Texte</p>
+              </div>
+              <div class="dt-step">
+                <span class="dt-time">0:35</span>
+                <strong>Review & Edit</strong>
+                <p>Redaktion prüft, passt an</p>
+              </div>
+              <div class="dt-step">
+                <span class="dt-time">0:50</span>
+                <strong>Publish</strong>
+                <p>Mock-Publishing oder Live-Adapter</p>
+              </div>
+            </div>
+            <p class="demo-cta">[ Wechsel zur Live-Demo ]</p>
+          </div>
+          <aside class="notes">Set up the demo. This slide is the transition before switching to the actual CMS.</aside>
+        </section>
+
+        <!-- 10. TECH STACK -->
+        <section>
+          <div class="section-layout">
+            <p class="kicker">Tech Stack</p>
+            <h2>Leichtgewichtig. Entkoppelt. Produktionsreif.</h2>
+            <div class="tech-diagram">
+              <div class="tech-layer top">
+                <div class="tech-badge">SolidJS</div>
+                <div class="tech-badge">TypeScript</div>
+                <div class="tech-badge">Vite</div>
+                <div class="tech-badge">Zod</div>
+              </div>
+              <div class="tech-connector"></div>
+              <div class="tech-layer mid">
+                <div class="tech-badge highlight">Shadow DOM</div>
+                <div class="tech-badge highlight">MutationObserver</div>
+                <div class="tech-badge highlight">Bookmarklet</div>
+              </div>
+              <div class="tech-connector"></div>
+              <div class="tech-layer bottom">
+                <div class="tech-badge accent">DW LLM Hub</div>
+                <div class="tech-badge accent">CMS API (DOM)</div>
+              </div>
+            </div>
+            <div class="tech-stats">
+              <div class="stat"><strong>~7 KB</strong><span>UI-Framework</span></div>
+              <div class="stat"><strong>0</strong><span>CMS-Abhängigkeiten</span></div>
+              <div class="stat"><strong>1 Klick</strong><span>Installation</span></div>
+            </div>
+          </div>
+          <aside class="notes">Quick tech overview. Three key numbers at the bottom.</aside>
+        </section>
+
+        <!-- 11. IMPACT -->
+        <section>
+          <div class="section-layout">
+            <p class="kicker">Impact</p>
+            <h2>Messbare Ergebnisse.</h2>
+            <div class="impact-grid">
+              <div class="impact-card hero">
+                <div class="impact-num">~80%</div>
+                <p>weniger manuelle Textarbeit pro Social Post</p>
+              </div>
+              <div class="impact-card">
+                <div class="impact-num">30+</div>
+                <p>Sprachen profitieren vom selben Tool</p>
+              </div>
+              <div class="impact-card">
+                <div class="impact-num">5x</div>
+                <p>mehr Plattformen bedienbar pro Redakteur:in</p>
+              </div>
+              <div class="impact-card">
+                <div class="impact-num">0</div>
+                <p>CMS-Releases nötig für neue Features</p>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">Numbers convince. These are conservative estimates based on the workflow.</aside>
+        </section>
+
+        <!-- 12. WHY THIS MATTERS FOR DW -->
+        <section>
+          <div class="section-layout">
+            <p class="kicker">Warum DW?</p>
+            <h2>Strategischer Mehrwert für die gesamte Organisation.</h2>
+            <div class="value-stack">
+              <div class="value-row">
+                <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                <div><strong>Reichweite</strong><p>Jeder Artikel erreicht mehr Plattformen, schneller — bei gleichem Personaleinsatz.</p></div>
+              </div>
+              <div class="value-row">
+                <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+                <div><strong>Innovation ohne Risiko</strong><p>Sidecar-Pattern: neue Features heute testen, ohne CMS-Deployments abzuwarten.</p></div>
+              </div>
+              <div class="value-row">
+                <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <div><strong>Abteilungsübergreifend</strong><p>DPD, Editorial AI, AIPRO und Redaktionen arbeiten mit dem gleichen Werkzeug.</p></div>
+              </div>
+              <div class="value-row">
+                <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+                <div><strong>Plattform für die Zukunft</strong><p>Heute Social Posts. Morgen: SEO, Übersetzung, Zusammenfassungen, Transkription.</p></div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">Connect to DW strategy. This is bigger than one hackathon.</aside>
+        </section>
+
+        <!-- 13. ROADMAP -->
+        <section>
+          <div class="section-layout">
+            <p class="kicker">Roadmap</p>
+            <h2>Vom Prototyp zur Produktion.</h2>
+            <div class="roadmap">
+              <div class="rm-phase now">
+                <div class="rm-label">Heute</div>
+                <strong>Funktionsfähiger Prototyp</strong>
+                <ul>
+                  <li>Social Drafter mit 5 Plattformen</li>
+                  <li>Title Suggester mit Write-Back</li>
+                  <li>Mock Publishing</li>
+                  <li>Plugin-Architektur</li>
+                </ul>
+              </div>
+              <div class="rm-phase month1">
+                <div class="rm-label">+1 Monat</div>
+                <strong>Pilot mit Redaktion</strong>
+                <ul>
+                  <li>Echte Bluesky/Telegram Adapter</li>
+                  <li>Feedback-Schleife mit Sprachteams</li>
+                  <li>SEO Bundle</li>
+                </ul>
+              </div>
+              <div class="rm-phase month3">
+                <div class="rm-label">+3 Monate</div>
+                <strong>Skalierung</strong>
+                <ul>
+                  <li>Rollout an weitere Sprachen</li>
+                  <li>Weitere Plattform-Adapter</li>
+                  <li>Analytics & Tracking</li>
+                </ul>
+              </div>
+              <div class="rm-phase month6">
+                <div class="rm-label">+6 Monate</div>
+                <strong>CMS Superpowers Plattform</strong>
+                <ul>
+                  <li>Plugin-Marketplace</li>
+                  <li>Offizielle CMS-Integration</li>
+                  <li>Community-Plugins</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">Show the path forward. This is not a throwaway hackathon project.</aside>
+        </section>
+
+        <!-- 14. WHY WE SHOULD WIN -->
+        <section data-background-color="#081336">
+          <div class="section-layout">
+            <p class="kicker light">Warum wir gewinnen sollten</p>
+            <h2 class="light">Ein echtes Problem. Eine echte Lösung. Bereit für den nächsten Schritt.</h2>
+            <div class="win-grid">
+              <div class="win-item"><strong>Echtes Problem</strong><p>Täglicher Pain für 30+ Redaktionen</p></div>
+              <div class="win-item"><strong>Nutzerwert</strong><p>Sofort spürbar bei jeder Artikelfreigabe</p></div>
+              <div class="win-item"><strong>Machbar</strong><p>Funktioniert heute — ohne CMS-Änderungen</p></div>
+              <div class="win-item"><strong>Innovation</strong><p>KI + Sidecar = neues Pattern für DW</p></div>
+              <div class="win-item"><strong>Skalierbar</strong><p>30+ Sprachen, unbegrenzte Plugins</p></div>
+              <div class="win-item"><strong>Teamwork</strong><p>8 Personen, diverse Skills, ein Tag</p></div>
+            </div>
+          </div>
+          <aside class="notes">The closing argument. Six reasons, one per card.</aside>
+        </section>
+
+        <!-- 15. CLOSING / CTA -->
         <section class="closing-slide" data-background-color="#F4F2F2">
           <div class="closing-layout">
-            <h2>More reach. Less manual work. Always under editorial control.</h2>
-            <p>Content Launchpad: CMS superpowers that ship today, as a bookmarklet.</p>
+            <h2>Mehr Reichweite. Weniger Routine. Volle redaktionelle Kontrolle.</h2>
+            <p>Content Launchpad: CMS Superpowers, die heute funktionieren — als Bookmarklet.</p>
+            <div class="cta-row">
+              <div class="cta-box">
+                <strong>GitHub</strong>
+                <span>github.com/juliarobinson555/berlin-hack-2026-cms-demo</span>
+              </div>
+              <div class="cta-box">
+                <strong>Team</strong>
+                <span>Bartek, Tomasz, Farah, Felix, Julia, Yuliya, Gianna, Hadi</span>
+              </div>
+            </div>
           </div>
-          <aside class="notes">End on the key message.</aside>
+          <aside class="notes">End with the key message and contact info.</aside>
         </section>
 
       </div>
