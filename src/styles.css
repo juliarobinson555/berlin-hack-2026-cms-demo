@@ -135,6 +135,15 @@ body {
 
 .title-layout .kicker {
   color: rgba(0, 8, 33, 0.6);
+  margin-bottom: 0.8vh;
+}
+
+.kicker-sub {
+  margin: 0 0 3vh;
+  color: rgba(0, 8, 33, 0.5);
+  font-size: clamp(11px, 0.95vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
 .product-name {
