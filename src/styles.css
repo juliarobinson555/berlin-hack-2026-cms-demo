@@ -678,6 +678,59 @@ body {
   opacity: 0.75;
 }
 
+.goal-sub-light {
+  max-width: 740px;
+  margin: 5vh 0 0;
+  color: var(--blue);
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.demo-platforms-light {
+  display: flex;
+  gap: 14px;
+  margin-top: 5vh;
+}
+
+.platform-pill {
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: var(--light);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.platform-pill.instagram {
+  background: rgba(193, 53, 132, 0.08);
+  border-color: rgba(193, 53, 132, 0.3);
+  color: #c13584;
+}
+
+.platform-pill.telegram {
+  background: rgba(34, 158, 217, 0.08);
+  border-color: rgba(34, 158, 217, 0.3);
+  color: #229ed9;
+}
+
+.platform-pill.reddit {
+  background: rgba(255, 69, 0, 0.08);
+  border-color: rgba(255, 69, 0, 0.25);
+  color: #ff4500;
+}
+
+.demo-switch-light {
+  margin-top: 5vh;
+  color: var(--accent);
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
 /* ============================================
    8. BEFORE vs AFTER — TRANSFORMATION
    ============================================ */
