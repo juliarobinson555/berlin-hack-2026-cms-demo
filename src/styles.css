@@ -212,12 +212,45 @@ body {
   50% { opacity: 1; transform: scale(1.1); }
 }
 
-.built-by {
+.title-bottom {
   margin-top: auto;
   padding-top: 5vh;
   display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.built-by {
+  display: flex;
   align-items: baseline;
   gap: 12px;
+}
+
+.qr-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.qr-code {
+  width: min(100px, 10vw);
+  height: min(100px, 10vw);
+  background: rgba(0, 8, 33, 0.15);
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.qr-label {
+  color: var(--ink);
+  opacity: 0.5;
+  font-size: clamp(9px, 0.75vw, 11px);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .built-label {
